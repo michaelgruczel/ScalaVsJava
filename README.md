@@ -4,7 +4,7 @@
 
 Dieses Projekt beinhaltet einigen primitiven Java-Code und dazu
 passenden Scala-Code und soll als einige Beispiele geben
-wie Scala einige Java Probleme elegantn löst.
+wie Scala einige Java Probleme elegant löst.
 
 ## Programmierparadigmen
 
@@ -86,25 +86,49 @@ Funktionen bestehen. Dadurch werden die aus der imperativen Programmierung bekan
 Objekte sind pronzipiell immutable. Damit können die Befehler perfekt auf die Kerne verteilt werden.
 Funktionale Programmierung ist möglicherweise die Zukunft.
 
+#### Einsatzkontext
+
+Funktionale Programmierung ist hoch performant und Seiteneffektfrei, möglicherweise noch nicht
+für jeden so einfach zuverstehen wie objektorientierte Programmierung und eignet sich damit
+ideal für einfache hochperformante Microservices.
+
+#### Nachteile
+
+Viele Funktionale Programmiersprachen haben noch keine gute IDE-Unterstützung
+und es gibt wenig Bibliotheken und wenig Deploymentmöglichkeiten.
+
 ## Scala
 
-TODO
+* Läuft in der VM, damit lässt sich Scala in Java-taugliche Server / Clouds deployen
+* Unterstützung durch Eclipse, IntelliJ, Netbeans, ...
+* Java lässt dich aus Scala aus aufrufen, womit Bibliotheken weiterverwendbar sind
+* Scala unterstützt funktionale Programmierung aber auch Objektorientierte
+* Scala Code ähnlich zu Java-Code
+* Scala ist elegant
 
 ## Scala vs Java in Action
 
-TODO
+In diesem Projekt befinden sich ein paar Beispiele.
+Man vergleiche den Code in package java mit dem
+Code im package scala.
 
 ### Elegant
 
-TODO
+Man braucht in Scala deutliche weniger und einfacheren Code als in Java, hier einige Beispiele
 
 #### case
 
-TODO
+Häufig braucht man in Java klassische Beans. Diese haben in Scala den classifier case class.
+Damit werden alle Felder welche in einem Konstruktor vorkommen angelegt. Ebenso wird automatisch
+equals und hashCode generiert.
+
+#### defaults
+
+Scala supported default-Werte. Man vergleiche die Konstruktoren in ScalaTimeSheetEntry mit JavaTimeSheetEntry
 
 #### operatoren
 
-TODO
+Scala erlaubt auch Operatoren-Bezeichner wie "+".
 
 #### high order
 
