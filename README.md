@@ -3,8 +3,8 @@
 ## Einleitung
 
 Dieses Projekt beinhaltet einigen primitiven Java-Code und dazu
-passenden Scala-Code und soll als einige Beispiele geben
-wie Scala einige Java Probleme elegant löst.
+passenden Scala-Code und soll einige Beispiele geben
+wie Scala Java Probleme elegant löst.
 
 ## Programmierparadigmen
 
@@ -30,6 +30,7 @@ Als Computer noch so groß wie Räume waren und lediglich zur Berechnung von mat
 Berechnungen verwendet wurden, der Ablauf linear war und an Paralellisierung oder event getriebenes
 design nicht zu denken war enstprach diese Art zu Programmieren den Hardwaremöglichkeiten der
 Zeit und ist Heute höchstens noch aus Skripten bekannt.
+Damals (1943) hat Thomas J. Watson gesagt  „I think there is a world market for maybe five computers.“
 Imperative Programmierung ist die Vergangenheit.
 
 #### Nachteile
@@ -67,7 +68,7 @@ die Rechner immer schneller geworden. Hierbei ist von Taktung der Prozessoren di
 Aber seit einigen Jahren steigt die Taktung nicht mehr. Ein Zuwachs der
 Performance verspricht die Paralellisierung. Moderne Prozessoren haben immer mehr Kerne.
 Daten welche über mehrere Kerne verteilt werden stellen hierbei das Bottleneck dar.
-wird ein Objekt parallel auf verschiedenen Kernen bearbeitet, so bekommt jeder Kern
+Wird ein Objekt parallel auf verschiedenen Kernen bearbeitet, so bekommt jeder Kern
 eine lokale Kopie der Variablen. Somit blockiert die
 Verarbeitung nicht aber damit können Inkonsistenzen enstehen, denn
 die Variable wurde parallel evt nach dem kopieren manipuliert.
@@ -83,13 +84,13 @@ die parallele Verarbeitung geblockt wird.
 
 Funktionale Programmierung ist ein Programmierparadigma, bei dem Programme ausschließlich aus
 Funktionen bestehen. Dadurch werden die aus der imperativen Programmierung bekannten Nebenwirkungen vermieden.
-Objekte sind pronzipiell immutable. Damit können die Befehler perfekt auf die Kerne verteilt werden.
+Objekte sind prinzipiell immutable. Damit können die Befehle perfekt auf die Kerne verteilt werden.
 Funktionale Programmierung ist möglicherweise die Zukunft.
 
 #### Einsatzkontext
 
 Funktionale Programmierung ist hoch performant und Seiteneffektfrei, möglicherweise noch nicht
-für jeden so einfach zuverstehen wie objektorientierte Programmierung und eignet sich damit
+für jeden so einfach zu verstehen wie objektorientierte Programmierung und eignet sich damit
 ideal für einfache hochperformante Microservices.
 
 #### Nachteile
@@ -99,11 +100,14 @@ und es gibt wenig Bibliotheken und wenig Deploymentmöglichkeiten.
 
 ## Scala
 
-* Läuft in der VM, damit lässt sich Scala in Java-taugliche Server / Clouds deployen
+Scala bietet sich für Java-Entwickler bestens an um in die funktionale Programmierung einzusteigen.
+Einige Kernfeatures sind:
+
+* Scala läuft in der VM, damit lässt sich Scala in Java-taugliche Server / Clouds deployen
 * Unterstützung durch Eclipse, IntelliJ, Netbeans, ...
 * Java lässt dich aus Scala aus aufrufen, womit Bibliotheken weiterverwendbar sind
 * Scala unterstützt funktionale Programmierung aber auch Objektorientierte
-* Scala Code ähnlich zu Java-Code
+* Scala Code ist ähnlich zu Java-Code
 * Scala ist elegant
 
 ## Scala vs Java in Action
@@ -117,15 +121,20 @@ von Scala zeigen, sind aber natürlich nicht vollständig.
 
 Man braucht in Scala deutliche weniger und einfacheren Code als in Java, hier einige Beispiele.
 
-#### case
+#### case classes
 
-Häufig braucht man in Java klassische Beans. Diese haben in Scala den classifier case class.
+Häufig braucht man in Java 2 typen von Klassen. klassische Beans und Singletons.
+Dafür gibt es in Scala keywords. Klassische Beans haben in Scala den classifier case class.
 Damit werden alle Felder welche in einem Konstruktor vorkommen angelegt. Ebenso wird automatisch
-equals und hashCode generiert.
+die equals und hashCode generiert. Damit werden klassische Beans zum Einzeiler.
+Falls man dann mal eine geschriebene equals Methode sieht bei der eine Feld nicht beachtet wird,
+ist auch klar das dies Absicht war. In Java könnte jemand auch vergessen haben die Methode neu
+durch die IDE zu generieren, nachdem er ein Feld hinzugefügt hat.
 
 #### defaults
 
 Scala supported default-Werte. Man vergleiche die Konstruktoren in ScalaTimeSheetEntry mit JavaTimeSheetEntry
+Damit kann man sich zum Beispiel das anlegen mehrfacher, quasi identischer Konstruktore sparen.
 
 #### operatoren
 
@@ -134,7 +143,7 @@ Scala erlaubt auch Operatoren-Bezeichner wie "+". Man schaue sich die "+"-Funkti
 #### high order Funktionen
 
 In Scala sind Funktionen auch nur Objekte und können somit auch als Parameter übergeben werden.
-Ein Beispiel ist die filter Funktion welche im ScalaTimeSheetUtil verwendet wird.
+Ein Beispiel dafür ist die filter Funktion welche im ScalaTimeSheetUtil verwendet wird.
 
 ### Traits
 
@@ -142,7 +151,7 @@ Scala unterstützt eine Form von Mehrfachvererbung. Man schaue sich das TraitExa
 
 ### Lazy Evaluation
 
-Scala unterstützt das auswerten von parametern zur Laufzeit. Ein Beispiel ist das LazyEvalExample.
+Scala unterstützt das auswerten von Parametern zur Laufzeit. Ein Beispiel ist das LazyEvalExample.
 
 ## Weitere Infos
 
