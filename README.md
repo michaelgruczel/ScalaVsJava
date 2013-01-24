@@ -110,11 +110,12 @@ und es gibt wenig Bibliotheken und wenig Deploymentmöglichkeiten.
 
 In diesem Projekt befinden sich ein paar Beispiele.
 Man vergleiche den Code in package java mit dem
-Code im package scala.
+Code im package scala. Die Beispiele sollen einige coole Features
+von Scala zeigen, sind aber natürlich nicht vollständig.
 
 ### Elegant
 
-Man braucht in Scala deutliche weniger und einfacheren Code als in Java, hier einige Beispiele
+Man braucht in Scala deutliche weniger und einfacheren Code als in Java, hier einige Beispiele.
 
 #### case
 
@@ -128,23 +129,20 @@ Scala supported default-Werte. Man vergleiche die Konstruktoren in ScalaTimeShee
 
 #### operatoren
 
-Scala erlaubt auch Operatoren-Bezeichner wie "+".
+Scala erlaubt auch Operatoren-Bezeichner wie "+". Man schaue sich die "+"-Funktion des ScalaTimeSheetEntry an.
 
-#### high order
+#### high order Funktionen
 
-TODO
-
-#### funktionen
-
-TODO
+In Scala sind Funktionen auch nur Objekte und können somit auch als Parameter übergeben werden.
+Ein Beispiel ist die filter Funktion welche im ScalaTimeSheetUtil verwendet wird.
 
 ### Traits
 
-TODO
+Scala unterstützt eine Form von Mehrfachvererbung. Man schaue sich das TraitExample an.
 
 ### Lazy Evaluation
 
-TODO
+Scala unterstützt das auswerten von parametern zur Laufzeit. Ein Beispiel ist das LazyEvalExample.
 
 ## Weitere Infos
 
